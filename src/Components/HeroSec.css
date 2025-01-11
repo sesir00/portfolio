@@ -1,0 +1,179 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.hero-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 40px;
+    margin-left: 10%;
+  }
+  
+  .hero-content {
+    max-width: 40%;
+    color: white;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem; /* Reverted to original size */
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem; /* Reverted to original size */
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .cta-button {
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Bigger button size */
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.5);
+  }
+  
+  .hero-image .profile-image {
+    border-radius: 50%;
+    width: 300px; /* Larger profile image size */
+    height: 300px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    margin-left: 80%; /* Added to control spacing between image and text */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    font-weight: 700;
+} */
+
+.animated-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.animated-text span {
+    position: relative;
+}
+
+.animated-text span::before {
+    content: "Youtuber";
+    color: #22c55e;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #333333 ;
+    border-left: 2px solid #22c55e;
+    right: -8px;
+    top: 0; /* Add this to ensure it's aligned with the top */
+    z-index: 1; /* Ensure it doesn’t overlap other elements */
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Coder";
+    }
+    21%, 40% {
+        content: "Developer";
+    }
+    41%, 60% {
+        content: "Programmer";
+    }
+    61%, 80% {
+        content: "Designer";
+    }
+    81%, 100% {
+        content: "Scripter";
+    }
+}
+
+@keyframes typing {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 8px);
+    }
+}
+
+/* .hero-image .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+} */
+
+/* .cta-button {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+} */
+
+.cta-button:hover {
+    background-color: #22c55e;
+}
