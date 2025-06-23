@@ -1,42 +1,59 @@
 import React from 'react';
+import {
+  FaHtml5, FaCss3Alt, FaJs, FaReact,
+  FaNodeJs, FaDatabase, FaGitAlt
+} from 'react-icons/fa';
+import { SiDotnet } from 'react-icons/si';
 import './Skill.css';
 
-const Skill = () => {
-    return (
-        <div id='skill'>
-            <h1 style={{margin:'5% 0 0 46%'}}>Skills</h1>
-            <div className="flip-card-container" style={{ marginTop: '8%' }}>
-                <div className="flip-card">
-                    <div className="flip-card-inner">
-                        <div className="flip-card-front">
-                            <p className="title">Frontend Technologies</p>
-                        </div>
-                        <div className="flip-card-back">
-                            <p className="title">HTML</p>
-                            <p className="title">CSS</p>
-                            <p className="title">JAVASCRIPT</p>
-                            <p className="title">REACT</p>
-                        </div>
-                    </div>
-                </div>
+const frontend = [
+  { name: "HTML", icon: <FaHtml5 style={{ color: '#E44D26', fontSize: '3.2rem' }} /> },
+  { name: "CSS", icon: <FaCss3Alt style={{ color: '#264de4', fontSize: '3.2rem' }} /> },
+  { name: "JavaScript", icon: <FaJs style={{ color: '#F0DB4F', fontSize: '3.2rem' }} /> },
+  { name: "React", icon: <FaReact style={{ color: '#61DBFB', fontSize: '3.2rem' }} /> },
+];
 
-                <div className="flip-card">
-                    <div className="flip-card-inner">
-                        <div className="flip-card-front">
-                            <p className="title">Backend Technologies</p>
-                        </div>
-                        <div className="flip-card-back">
-                            <p className="title">NODEJS</p>
-                            <p className="title">ExpressJS</p>
-                            <p className="title">MongoDB</p>
-                            <p className="title">SQL</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+const backend = [
+  { name: "Node.js", icon: <FaNodeJs style={{ color: '#68A063', fontSize: '3.2rem' }} /> },
+  { name: "SQL", icon: <FaDatabase style={{ color: '#336791', fontSize: '3.2rem' }} /> }, // SQL styled
+  { name: "Git", icon: <FaGitAlt style={{ color: '#F1502F', fontSize: '3.2rem' }} /> },
+  { name: ".NET", icon: <SiDotnet style={{ color: '#512BD4', fontSize: '3.2rem' }} /> },
+];
+
+const Skill = () => {
+  return (
+    <section id="skill" className="skill-section">
+      <h2 className="skill-heading">Skills</h2>
+
+      <div className="skills-wrapper">
+        {/* Frontend */}
+        <div className="skill-group">
+          <h3 className="skill-subheading">Frontend Technologies</h3>
+          <div className="icon-grid">
+            {frontend.map((tech, index) => (
+              <div className="icon-box" key={index}>
+                <div className="icon">{tech.icon}</div>
+                <p>{tech.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-    );
+        {/* Backend */}
+        <div className="skill-group">
+          <h3 className="skill-subheading">Backend Technologies</h3>
+          <div className="icon-grid">
+            {backend.map((tech, index) => (
+              <div className="icon-box" key={index}>
+                <div className="icon">{tech.icon}</div>
+                <p>{tech.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Skill;
