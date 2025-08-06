@@ -34,7 +34,7 @@ const ContactForm = () => {
       <form ref={form} onSubmit={sendEmail} className="contact-form">
         <div className="form-group">
           <label htmlFor="user_name">Name</label>
-          <input type="text" id="user_name" name="user_name" placeholder="Your Name" required />
+          <input type="text" id="user_name" name="name" placeholder="Your Name" required />
         </div>
         <div className="form-group">
           <label htmlFor="user_email">Email</label>
