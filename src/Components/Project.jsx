@@ -4,78 +4,78 @@ const Projects = () => {
   const [hoveredId, setHoveredId] = useState(null);
 
   const projects = [
-  {
-    id: 1,
-    icon: '🛒',
-    status: 'Live',
-    title: 'E-Commerce Platform',
-    description:
-      'A full-stack e-commerce solution with real-time inventory management, secure payment integration, and an intuitive admin dashboard.',
-    tags: ['ASP.NET', 'WebForms', 'SQL'],
-    demoLink: '#',
-    codeLink: '#',
-  },
-  {
-    id: 2,
-    icon: '📝',
-    status: 'Live',
-    title: 'MCQ Generator',
-    description:
-      'An AI-powered MCQ generation system built using a fine-tuned T5 model trained on SQuAD, capable of context-aware question creation.',
-    tags: ['React','NodeJS','Python','T5'],
-    demoLink: '#',
-    codeLink: 'https://github.com/sesir00/MCQ-Generator',
-  },
-  {
-    id: 3,
-    icon: '🎬',
-    status: 'Live',
-    title: 'CCRStream',
-    description:
-      'A movie streaming platform supporting user authentication, role-based access, and smooth streaming with a modern UI.',
-    tags: ['HTML', 'CSS', 'JS'],
-    demoLink: 'https://ccrstream.netlify.app/',
-    codeLink: '#',
-  },
-  {
-    id: 4,
-    icon: '💬',
-    status: 'Beta',
-    title: 'Real-time Chat Application',
-    description:
-      'A scalable chat platform with groups, file sharing, and real-time messaging using WebSockets.',
-    tags: ['React','.Net Core' ,'SignalR', 'Redis', 'MongoDB'],
-    demoLink: '#',
-    codeLink: '#',
-  },
-  {
-    id: 5,
-    icon: '✅',
-    status: 'Live',
-    title: 'ToDo List',
-    description:
-      'Task management app built with .NET 9 Web API and React, featuring CRUD operations and JWT authentication.',
-    tags: ['React', '.NET 9', 'SQL Server'],
-    demoLink: '#',
-    codeLink: 'https://github.com/sesir00/Todo-asp',
-  },
-  {
-    id: 6,
-    icon: '🏠',
-    status: 'Live',
-    title: 'Property Bidding System',
-    description:
-      'A real estate bidding system where users can list properties and participate in transparent bidding.',
-    tags: ['ASP.NET', '.NET core', 'SQL Server'],
-    demoLink: '#',
-    codeLink: 'https://github.com/sesir00/Property-Bidding',
-  },
-];
+    {
+      id: 1,
+      icon: '🛒',
+      status: 'Live',
+      title: 'E-Commerce Platform',
+      description:
+        'A full-stack e-commerce solution with real-time inventory management, secure payment integration, and an intuitive admin dashboard.',
+      tags: ['ASP.NET', 'WebForms', 'SQL'],
+      demoLink: '#',
+      codeLink: 'https://github.com/sesir00/Intern',
+    },
+    {
+      id: 2,
+      icon: '📝',
+      status: 'Live',
+      title: 'MCQ Generator',
+      description:
+        'An AI-powered MCQ generation system built using a fine-tuned T5 model trained on SQuAD, capable of context-aware question creation.',
+      tags: ['React', 'NodeJS', 'Python', 'T5'],
+      demoLink: '#',
+      codeLink: 'https://github.com/sesir00/MCQ-Generator',
+    },
+    {
+      id: 3,
+      icon: '🎬',
+      status: 'Live',
+      title: 'CCRStream',
+      description:
+        'A movie streaming platform supporting user authentication, role-based access, and smooth streaming with a modern UI.',
+      tags: ['HTML', 'CSS', 'JS'],
+      demoLink: 'https://ccrstream.netlify.app/',
+      codeLink: 'https://github.com/sesir00/CCRStream',
+    },
+    {
+      id: 4,
+      icon: '💬',
+      status: 'Beta',
+      title: 'Real-time Chat Application',
+      description:
+        'A scalable chat platform with groups, file sharing, and real-time messaging using WebSockets.',
+      tags: ['React', '.Net Core', 'SignalR', 'Redis', 'MongoDB'],
+      demoLink: '#',
+      codeLink: '#',
+    },
+    {
+      id: 5,
+      icon: '✅',
+      status: 'Live',
+      title: 'ToDo List',
+      description:
+        'Task management app built with .NET 9 Web API and React, featuring CRUD operations and JWT authentication.',
+      tags: ['React', '.NET 9', 'SQL Server'],
+      demoLink: '#',
+      codeLink: 'https://github.com/sesir00/Todo-asp',
+    },
+    {
+      id: 6,
+      icon: '🏠',
+      status: 'Live',
+      title: 'Property Bidding System',
+      description:
+        'A real estate bidding system where users can list properties and participate in transparent bidding.',
+      tags: ['ASP.NET', '.NET core', 'SQL Server'],
+      demoLink: '#',
+      codeLink: 'https://github.com/sesir00/Property-Bidding',
+    },
+  ];
 
 
   return (
-    <section 
-      id="projects" 
+    <section
+      id="projects"
       className="py-20 px-5 text-white font-poppins"
     >
       <div className="max-w-7xl mx-auto">
@@ -109,18 +109,16 @@ const Projects = () => {
                 </div>
 
                 {/* Icon */}
-                <div className={`text-8xl transition-all duration-500 ${
-                  hoveredId === project.id ? 'scale-110 drop-shadow-[0_0_20px_rgba(34,197,94,0.5)]' : 'scale-100'
-                }`}>
+                <div className={`text-8xl transition-all duration-500 ${hoveredId === project.id ? 'scale-110 drop-shadow-[0_0_20px_rgba(34,197,94,0.5)]' : 'scale-100'
+                  }`}>
                   {project.icon}
                 </div>
 
                 {/* Status Badge */}
-                <div className={`absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md transition-all duration-300 ${
-                  project.status === 'Live' 
-                    ? 'bg-green-500/20 border border-green-500/50 text-green-400' 
+                <div className={`absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md transition-all duration-300 ${project.status === 'Live'
+                    ? 'bg-green-500/20 border border-green-500/50 text-green-400'
                     : 'bg-yellow-500/20 border border-yellow-500/50 text-yellow-400'
-                }`}>
+                  }`}>
                   {project.status}
                 </div>
               </div>
@@ -151,21 +149,29 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
+                  {/* View Demo */}
                   <a
                     href={project.demoLink}
-                    className="flex-1 bg-green-500 hover:bg-green-600 text-black font-semibold py-2.5 px-4 rounded-lg text-center text-sm transition-all duration-300 hover:shadow-lg hover:shadow-green-500/50 hover:scale-105"
-                    onClick={(e) => e.preventDefault()}
+                    target={project.demoLink !== '#' ? "_blank" : undefined}
+                    rel={project.demoLink !== '#' ? "noopener noreferrer" : undefined}
+                    onClick={(e) => project.demoLink === '#' && e.preventDefault()}
+                    className="flex-1 bg-green-500 hover:bg-green-600 text-black font-semibold py-2.5 px-4 rounded-lg text-center text-sm transition-all duration-300 hover:shadow-lg hover:shadow-green-500/50 hover:scale-105 no-underline"
                   >
                     View Demo
                   </a>
+
+                  {/* View Code */}
                   <a
                     href={project.codeLink}
-                    className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold py-2.5 px-4 rounded-lg text-center text-sm border border-zinc-700 hover:border-green-500/50 transition-all duration-300"
-                    onClick={(e) => e.preventDefault()}
+                    target={project.codeLink !== '#' ? "_blank" : undefined}
+                    rel={project.codeLink !== '#' ? "noopener noreferrer" : undefined}
+                    onClick={(e) => project.codeLink === '#' && e.preventDefault()}
+                    className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold py-2.5 px-4 rounded-lg text-center text-sm border border-zinc-700 hover:border-green-500/50 transition-all duration-300 no-underline"
                   >
                     View Code
                   </a>
                 </div>
+
               </div>
 
               {/* Corner Accent */}
