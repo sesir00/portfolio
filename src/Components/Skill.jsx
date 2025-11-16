@@ -1,6 +1,4 @@
 import React from "react";
-import SplitText from "../Extra/SplitText";
-import LogoLoop from "../Extra/LogoLoop";
 import {
   SiReact,
   SiNextdotjs,
@@ -18,81 +16,105 @@ import {
   SiPython,
 } from "react-icons/si";
 
-// 🎨 Brand colors
-const techColors = {
-  React: "#61DBFB",
-  "Next.js": "#000000",
-  TypeScript: "#3178C6",
-  "Tailwind CSS": "#06B6D4",
-  ".NET Core": "#512BD4",
-  HTML: "#E44D26",
-  CSS: "#264de4",
-  Git: "#F1502F",
-  SQL: "#336791",
-  "Node.js": "#68A063",
-  Docker: "#2496ED",
-  Express: "#000000",
-  Blazor: "#512BD4",
-  Python: "#3776AB",
-};
-
-// 🌀 Tech Logos with auto-color
-const techLogos = [
-  { node: <SiReact />, title: "React", href: "https://react.dev" },
-  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
-  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-  { node: <SiDotnet />, title: ".NET Core", href: "https://dotnet.microsoft.com/" },
-  { node: <SiHtml5 />, title: "HTML", href: "https://developer.mozilla.org/docs/Web/HTML" },
-  { node: <SiCss3 />, title: "CSS", href: "https://developer.mozilla.org/docs/Web/CSS" },
-  { node: <SiGit />, title: "Git", href: "https://git-scm.com/" },
-  { node: <SiMysql />, title: "SQL", href: "https://www.mysql.com/" },
-  { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
-  { node: <SiDocker />, title: "Docker", href: "https://www.docker.com/" },
-  { node: <SiExpress />, title: "Express", href: "https://expressjs.com/" },
-  { node: <SiBlazor />, title: "Blazor", href: "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor" },
-  { node: <SiPython />, title: "Python", href: "https://www.python.org" },
-].map((tech) => ({
-  ...tech,
-  node: React.cloneElement(tech.node, {
-    className: "w-12 h-12 transition-colors duration-300",
-    style: { color: techColors[tech.title] || "#666" },
-  }),
-}));
+// Tech stack with original brand colors
+const techStack = [
+  { Icon: SiReact, name: "React", color: "#61DBFB", href: "https://react.dev" },
+  { Icon: SiNextdotjs, name: "Next.js", color: "#FFFFFF", href: "https://nextjs.org" },
+  { Icon: SiTypescript, name: "TypeScript", color: "#3178C6", href: "https://www.typescriptlang.org" },
+  { Icon: SiTailwindcss, name: "Tailwind CSS", color: "#06B6D4", href: "https://tailwindcss.com" },
+  { Icon: SiDotnet, name: ".NET Core", color: "#512BD4", href: "https://dotnet.microsoft.com/" },
+  { Icon: SiHtml5, name: "HTML", color: "#E44D26", href: "https://developer.mozilla.org/docs/Web/HTML" },
+  { Icon: SiCss3, name: "CSS", color: "#264de4", href: "https://developer.mozilla.org/docs/Web/CSS" },
+  { Icon: SiGit, name: "Git", color: "#F1502F", href: "https://git-scm.com/" },
+  { Icon: SiMysql, name: "SQL", color: "#336791", href: "https://www.mysql.com/" },
+  { Icon: SiNodedotjs, name: "Node.js", color: "#68A063", href: "https://nodejs.org" },
+  { Icon: SiDocker, name: "Docker", color: "#2496ED", href: "https://www.docker.com/" },
+  { Icon: SiExpress, name: "Express", color: "#FFFFFF", href: "https://expressjs.com/" },
+  { Icon: SiBlazor, name: "Blazor", color: "#512BD4", href: "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor" },
+  { Icon: SiPython, name: "Python", color: "#3776AB", href: "https://www.python.org" },
+];
 
 const Skill = () => {
   return (
     <section
       id="skill"
-      className="py-16 px-5 bg-gray-50 text-center font-poppins"
+      className="py-20 px-5 text-center font-poppins"
     >
-      <SplitText
-        text="Skills"
-        className="text-3xl md:text-4xl font-bold text-gray-800 mb-10"
-        delay={100}
-        duration={0.6}
-        ease="power3.out"
-        splitType="chars"
-        from={{ opacity: 0, y: 40 }}
-        to={{ opacity: 1, y: 0 }}
-        threshold={0.1}
-        rootMargin="-100px"
-        textAlign="center"
-      />
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent pb-2">
+          Skills & Technologies 
+        </h1>
 
-      <div className="relative h-[200px] overflow-hidden mt-8">
-        <LogoLoop
-          logos={techLogos}
-          speed={120}
-          direction="left"
-          logoHeight={48}
-          gap={40}
-          pauseOnHover
-          scaleOnHover
-          fadeOut
-          fadeOutColor="#ffffff"
-          ariaLabel="Technology partners"
-        />
+        <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">
+          Proficient in modern technologies and frameworks to build scalable, performant applications
+        </p>
+
+        {/* Tech Stack Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8 mt-12">
+          {techStack.map((tech, index) => (
+            <a
+              key={tech.name}
+              href={tech.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 hover:border-green-500/50 rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-green-500/20 no-underline"
+              style={{ animationDelay: `${index * 50}ms` }}
+            >
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-green-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+
+              {/* Icon Container */}
+              <div className="relative flex flex-col items-center gap-3">
+                <div className="relative">
+                  {/* Icon Glow Background */}
+                  <div 
+                    className="absolute inset-0 blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"
+                    style={{ backgroundColor: tech.color }}
+                  />
+                  
+                  {/* Icon */}
+                  <tech.Icon 
+                    className="w-12 h-12 md:w-14 md:h-14 transition-all duration-300 group-hover:scale-110 relative z-10"
+                    style={{ color: tech.color }}
+                  />
+                </div>
+
+                {/* Tech Name */}
+                <span className="text-sm font-medium text-gray-400 group-hover:text-white transition-colors duration-300">
+                  {tech.name}
+                </span>
+              </div>
+
+              {/* Corner Accent */}
+              <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-green-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tr-2xl pointer-events-none" />
+            </a>
+          ))}
+        </div>
+
+        {/* Stats Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+          <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-8 hover:border-green-500/50 transition-all duration-300">
+            <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent mb-2">
+              14+
+            </div>
+            <div className="text-gray-400 font-medium">Technologies</div>
+          </div>
+          
+          <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-8 hover:border-green-500/50 transition-all duration-300">
+            <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent mb-2">
+              1+
+            </div>
+            <div className="text-gray-400 font-medium">Years Experience</div>
+          </div>
+          
+          <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-8 hover:border-green-500/50 transition-all duration-300">
+            <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent mb-2">
+              10+
+            </div>
+            <div className="text-gray-400 font-medium">Projects Completed</div>
+          </div>
+        </div>
       </div>
     </section>
   );

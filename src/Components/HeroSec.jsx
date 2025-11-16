@@ -3,7 +3,7 @@ import './HeroSec.css'
 import Profile from '../assets/profile.jpg'
 const HeroSec = () => {
   return (
-    <div style={{ backgroundColor: '#333333 ' }}>
+    <div>
       <div className="hero-extension" style={{paddingTop: '5%', paddingBottom: '5%'}}>
       <section className="hero-section">
         <div className="hero-content">

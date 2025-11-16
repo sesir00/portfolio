@@ -116,7 +116,7 @@
     position: absolute;
     width: calc(100% + 8px);
     height: 100%;
-    background-color: #333333 ;
+    background-color: var(--typing-cursor-bg);
     border-left: 2px solid #22c55e;
     right: -8px;
     top: 0; /* Add this to ensure it's aligned with the top */

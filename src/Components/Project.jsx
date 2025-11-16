@@ -1,109 +1,188 @@
-import React from "react";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import React, { useState } from 'react';
 
-const projects = [
+const Projects = () => {
+  const [hoveredId, setHoveredId] = useState(null);
+
+  const projects = [
   {
-    year: "2025",
-    title: "Property Bidding System",
-    description: "Online platform for competitive property bidding.",
-    tech: ["ASP.NET Core", "SQL"],
-    live: "#",
-    code: "#",
+    id: 1,
+    icon: '🛒',
+    status: 'Live',
+    title: 'E-Commerce Platform',
+    description:
+      'A full-stack e-commerce solution with real-time inventory management, secure payment integration, and an intuitive admin dashboard.',
+    tags: ['ASP.NET', 'WebForms', 'SQL'],
+    demoLink: '#',
+    codeLink: '#',
   },
   {
-    year: "2024",
-    title: "MCQ Generator",
-    description: "Generates multiple-choice questions using a fine-tuned AI model.",
-    tech: ["React", "Node.js", "SQL", "Python"],
-    live: "#",
-    code: "https://github.com/sesir00/MCQ-Generator",
+    id: 2,
+    icon: '📝',
+    status: 'Live',
+    title: 'MCQ Generator',
+    description:
+      'An AI-powered MCQ generation system built using a fine-tuned T5 model trained on SQuAD, capable of context-aware question creation.',
+    tags: ['React','NodeJS','Python','T5'],
+    demoLink: '#',
+    codeLink: 'https://github.com/sesir00/MCQ-Generator',
   },
   {
-    year: "2023",
-    title: "ToDo List",
-    description: "MVC-based ToDo app with migrations & middleware.",
-    tech: ["React", "ASP.NET Core Web API"],
-    live: "#",
-    code: "https://github.com/sesir00/Todo-asp",
+    id: 3,
+    icon: '🎬',
+    status: 'Live',
+    title: 'CCRStream',
+    description:
+      'A movie streaming platform supporting user authentication, role-based access, and smooth streaming with a modern UI.',
+    tags: ['HTML', 'CSS', 'JS'],
+    demoLink: 'https://ccrstream.netlify.app/',
+    codeLink: '#',
   },
-  
   {
-    year: "2022",
-    title: "CCRStream",
-    description: "Browse, search, and save your favorite movies.",
-    tech: ["HTML", "CSS", "TMDb API"],
-    live: "https://ccrstream.netlify.app/",
-    code: "https://github.com/sesir00/CCRStream",
+    id: 4,
+    icon: '💬',
+    status: 'Beta',
+    title: 'Real-time Chat Application',
+    description:
+      'A scalable chat platform with groups, file sharing, and real-time messaging using WebSockets.',
+    tags: ['React','.Net Core' ,'SignalR', 'Redis', 'MongoDB'],
+    demoLink: '#',
+    codeLink: '#',
   },
-  
+  {
+    id: 5,
+    icon: '✅',
+    status: 'Live',
+    title: 'ToDo List',
+    description:
+      'Task management app built with .NET 9 Web API and React, featuring CRUD operations and JWT authentication.',
+    tags: ['React', '.NET 9', 'SQL Server'],
+    demoLink: '#',
+    codeLink: 'https://github.com/sesir00/Todo-asp',
+  },
+  {
+    id: 6,
+    icon: '🏠',
+    status: 'Live',
+    title: 'Property Bidding System',
+    description:
+      'A real estate bidding system where users can list properties and participate in transparent bidding.',
+    tags: ['ASP.NET', '.NET core', 'SQL Server'],
+    demoLink: '#',
+    codeLink: 'https://github.com/sesir00/Property-Bidding',
+  },
 ];
 
-export default function ProjectTimeline() {
+
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-5xl mx-auto px-6">
-        {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-          My Journey
-        </h2>
+    <section 
+      id="projects" 
+      className="py-20 px-5 text-white font-poppins"
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent pb-2">
+            Featured Projects
+          </h1>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Showcasing my best work and creative solutions
+          </p>
+        </div>
 
-        {/* Timeline */}
-        <div className="relative border-l-4 border-green-500 dark:border-green-500">
-          {projects.map((p, idx) => (
-            <div key={idx} className="mb-12 ml-8">
-              {/* Circle */}
-              <div className="absolute w-6 h-6 bg-green-500 rounded-full -left-3.5 border-4 border-gray-50 dark:border-gray-900"></div>
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              onMouseEnter={() => setHoveredId(project.id)}
+              onMouseLeave={() => setHoveredId(null)}
+              className="group relative bg-zinc-900/50 rounded-2xl overflow-hidden border border-zinc-800 hover:border-green-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/20 backdrop-blur-sm"
+            >
+              {/* Gradient Overlay on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-green-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-              {/* Year */}
-              <time className="text-sm font-semibold text-green-500">
-                {p.year}
-              </time>
+              {/* Project Icon/Header */}
+              <div className="relative h-48 bg-gradient-to-br from-zinc-800/80 to-zinc-900/80 overflow-hidden flex items-center justify-center">
+                {/* Animated Background Pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(34,197,94,0.1)_50%,transparent_75%)] bg-[length:20px_20px]" />
+                </div>
 
-              {/* Card */}
-              <div className="mt-2 bg-white dark:bg-gray-800 shadow-md rounded-xl p-6 transition hover:shadow-xl">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-                  {p.title}
+                {/* Icon */}
+                <div className={`text-8xl transition-all duration-500 ${
+                  hoveredId === project.id ? 'scale-110 drop-shadow-[0_0_20px_rgba(34,197,94,0.5)]' : 'scale-100'
+                }`}>
+                  {project.icon}
+                </div>
+
+                {/* Status Badge */}
+                <div className={`absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md transition-all duration-300 ${
+                  project.status === 'Live' 
+                    ? 'bg-green-500/20 border border-green-500/50 text-green-400' 
+                    : 'bg-yellow-500/20 border border-yellow-500/50 text-yellow-400'
+                }`}>
+                  {project.status}
+                </div>
+              </div>
+
+              {/* Project Content */}
+              <div className="p-6 relative z-10">
+                {/* Title */}
+                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-green-400 transition-colors duration-300">
+                  {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">
-                  {p.description}
+
+                {/* Description */}
+                <p className="text-gray-400 text-sm leading-relaxed mb-5 min-h-[80px]">
+                  {project.description}
                 </p>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {p.tech.map((t, i) => (
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag, tagIndex) => (
                     <span
-                      key={i}
-                      className="text-xs px-3 py-1 rounded-full bg-green-100 text-green-700 dark:bg-green-600 dark:text-white font-medium"
+                      key={tagIndex}
+                      className="bg-zinc-800/60 text-green-400 px-3 py-1.5 rounded-lg text-xs font-medium border border-zinc-700 group-hover:border-green-500/30 group-hover:bg-green-500/10 transition-all duration-300"
                     >
-                      {t}
+                      {tag}
                     </span>
                   ))}
                 </div>
 
-                {/* Links */}
-                <div className="flex gap-5 mt-5">
+                {/* Action Buttons */}
+                <div className="flex gap-3">
                   <a
-                    href={p.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-1 text-sm text-green-600 dark:text-green-400 hover:underline"
+                    href={project.demoLink}
+                    className="flex-1 bg-green-500 hover:bg-green-600 text-black font-semibold py-2.5 px-4 rounded-lg text-center text-sm transition-all duration-300 hover:shadow-lg hover:shadow-green-500/50 hover:scale-105"
+                    onClick={(e) => e.preventDefault()}
                   >
-                    <FaExternalLinkAlt /> Live Demo
+                    View Demo
                   </a>
                   <a
-                    href={p.code}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-1 text-sm text-green-600 dark:text-green-400 hover:underline"
+                    href={project.codeLink}
+                    className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold py-2.5 px-4 rounded-lg text-center text-sm border border-zinc-700 hover:border-green-500/50 transition-all duration-300"
+                    onClick={(e) => e.preventDefault()}
                   >
-                    <FaGithub /> GitHub
+                    View Code
                   </a>
                 </div>
               </div>
+
+              {/* Corner Accent */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </div>
           ))}
+        </div>
+
+        {/* View More Section */}
+        <div className="text-center mt-16">
+          <button className="bg-transparent border-2 border-green-500/50 text-green-400 px-8 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black hover:border-green-500 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/50">
+            View All Projects →
+          </button>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Projects;
