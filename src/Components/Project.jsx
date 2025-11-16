@@ -176,7 +176,7 @@ const Projects = () => {
 
         {/* View More Section */}
         <div className="text-center mt-16">
-          <button className="bg-transparent border-2 border-green-500/50 text-green-400 px-8 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black hover:border-green-500 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/50">
+          <button className="bg-transparent border-2 border-green-500/50 text-green-400 px-8 py-3 rounded-lg font-semibold hover:bg-green-500/20 hover:text-green-400 hover:border-green-500 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/50">
             View All Projects →
           </button>
         </div>

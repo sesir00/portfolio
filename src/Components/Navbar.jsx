@@ -77,7 +77,7 @@ const Navbar = () => {
           </div>
           <div className="menu-footer">
             <button className="mobile-action-btn">
-              <span>Sign In</span>
+              <span>Lets talk</span>
             </button>
           </div>
         </div>
