@@ -177,3 +177,39 @@
 .cta-button:hover {
     background-color: #22c55e;
 }
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-image .profile-image {
+        margin-left: 0;
+        margin-top: 30px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .animated-text {
+        font-size: 28px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
